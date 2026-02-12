@@ -70,6 +70,7 @@ void main(void)
     strcpy(PO[10].rk_lvl, "K3");
 
     char buffer[200];
+    char buffer1[200];
 
     // while(fgets(buffer, sizeof(buffer), k1) != NULL){
     //     buffer[strcspn(buffer, "\n")] = '\0';
