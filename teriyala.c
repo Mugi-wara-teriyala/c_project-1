@@ -25,9 +25,9 @@ void main(void)
         printf("Error opening file analyzing.txt\n");
         return;
     }
-    k5 = fopen("create.txt", "r");
+    k5 = fopen("creating.txt", "r");
     if(k5 == NULL) {
-        printf("Error opening file create.txt\n");
+        printf("Error opening file creating.txt\n");
         return;
     }
     k6 = fopen("evaluating.txt", "r");
