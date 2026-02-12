@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 annotating
 tweeting
 associating
@@ -27,4 +28,35 @@ give original examples of
 summarize
 contrast
 interpret
+=======
+annotating
+tweeting
+associating
+tagging
+summarizing
+relating
+categorizing
+paraphrasing
+predicting
+comparing
+contrasting
+commenting
+journaling
+interpreting
+grouping
+inferring
+estimating
+extending
+gathering
+exemplifying
+expressing
+describe
+explain
+paraphrase
+restate
+give original examples of
+summarize
+contrast
+interpret
+>>>>>>> 557d44aed67b780c7dac8b70253a2eeaa4c6b3ac
 discuss

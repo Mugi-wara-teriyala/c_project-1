@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 
@@ -66,23 +67,22 @@ int main(void)
             PO[j].contribution[i]=1;
             else if((PO[j].y-CO[j].x)>=3)
             PO[j].contribution[i]=0;
+        }
     }
+
+    printf("+-----+-----+-----+-----+-----+-----+\n");
+    printf("| CO  | PO1 | PO2 | PO3 | PO4 | PO5 |\n");
+    printf("+-----+-----+-----+-----+-----+-----+\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("| CO%d |", i + 1);
+        for (int j = 0; j < 5; j++) {
+            printf(" %2d  |", PO[j].contribution[i]);
+        }
+        printf("\n");
     }
 
+    printf("+-----+-----+-----+-----+-----+-----+\n");
 
-printf("+-----+-----+-----+-----+-----+-----+\n");
-printf("| CO  | PO1 | PO2 | PO3 | PO4 | PO5 |\n");
-printf("+-----+-----+-----+-----+-----+-----+\n");
-
-for (int i = 0; i < 5; i++) {
-    printf("| CO%d |", i + 1);
-    for (int j = 0; j < 5; j++) {
-        printf(" %2d  |", PO[j].contribution[i]);
-    }
-    printf("\n");
-}
-
-printf("+-----+-----+-----+-----+-----+-----+\n");
-
-      return 0;
+    return 0;
 }

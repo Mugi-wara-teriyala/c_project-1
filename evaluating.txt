@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 arguing
 validation
 testing
@@ -33,4 +34,41 @@ justify
 support
 convince
 select
+=======
+arguing
+validation
+testing
+scoring
+assessing
+criticizing
+commenting
+debating
+defending
+detecting
+experimenting
+grading
+hypothesizing
+measuring
+moderating
+posting
+predicting
+rating
+reflecting
+reviewing
+editorializing
+choose
+support
+relate
+determine
+defend
+judge
+grade
+compare
+contrast
+argue,
+justify
+support
+convince
+select
+>>>>>>> 557d44aed67b780c7dac8b70253a2eeaa4c6b3ac
 evaluate

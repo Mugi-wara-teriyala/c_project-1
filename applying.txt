@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acting out
 articulate
 reenact
@@ -29,4 +30,37 @@ demonstrate
 determine
 model
 perform
+=======
+acting out
+articulate
+reenact
+loading
+choosing
+determining
+displaying
+judging
+executing
+examining
+imlementing
+sketching
+experimenting
+hacking
+interewing
+painting
+preparing
+playing
+integrating
+presenting
+charting
+calculate
+predict
+apply
+solve
+illustrate
+use
+demonstrate
+determine
+model
+perform
+>>>>>>> 557d44aed67b780c7dac8b70253a2eeaa4c6b3ac
 present

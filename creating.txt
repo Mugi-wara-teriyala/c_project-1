@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 blogging
 building
 animating
@@ -28,4 +29,36 @@ compose
 generate
 derive
 modify 
+=======
+blogging
+building
+animating
+adapting
+collaborating
+composing
+directing
+devising
+podcasting
+wiki building
+writing
+flimming
+programmig
+simulating
+role playing
+solving
+mixing
+facilitating
+managing
+negotiating
+leading
+design
+formulate
+build
+inven
+create
+compose
+generate
+derive
+modify 
+>>>>>>> 557d44aed67b780c7dac8b70253a2eeaa4c6b3ac
 develop
