@@ -1,67 +1,52 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include "my_funcs.h"
 
 void main(void)
 {
-    FILE *k5,*k1,*k3,*k4,*k2,*k6;
-    k1 = fopen("understanding.txt", "r");
-    if(k1 == NULL) {
-        printf("Error opening file understanding.txt\n");
-        return;
+    
+    FILE *k[5] = {fopen("remembering.txt", "r"), fopen("understanding.txt", "r"), fopen("applying.txt", "r"), fopen("analyzing.txt", "r"), fopen("creating.txt", "r")};
+    for(int i=0;i<5;i++)
+    {
+        if(k[i] == NULL) {
+            printf("Error opening file %d\n", i+1);
+            return;
+        }
     }
-    k2 = fopen("remembering.txt", "r");
-    if(k2 == NULL) {
-        printf("Error opening file remembering.txt\n");
-        return;
-    }  
-    k3 = fopen("applying.txt", "r");
-    if(k3 == NULL) {
-        printf("Error opening file applying.txt\n");
-        return;
-    }
-    k4 = fopen("analyzing.txt", "r");
-    if(k4 == NULL) {
-        printf("Error opening file analyzing.txt\n");
-        return;
-    }
-    k5 = fopen("creating.txt", "r");
-    if(k5 == NULL) {
-        printf("Error opening file creating.txt\n");
-        return;
-    }
-    k6 = fopen("evaluating.txt", "r");
-    if(k6 == NULL) {
-        printf("Error opening file evaluating.txt\n");
-        return;
-    }
+
+    
+    char buffer[200];
 
 
     printf("Course Outcomes and Program Outcomes Contribution Matrix\n");
 
     co CO[5];
     strcpy(CO[0].c_name, "Discuss the principle and working of various radiographic equipments.");
-    strcpy(CO[0].k_lvl, "K2");
     
 
     strcpy(CO[1].c_name, "Explain the tomography concept and image reconstruction techniques.");
-    strcpy(CO[1].k_lvl, "K2");
 
     strcpy(CO[2].c_name, "Illustrate the concept of radio isotopic imaging techniques.");
-    strcpy(CO[2].k_lvl, "K2");
 
     strcpy(CO[3].c_name, "Describe the basic principle involved in Ultrasound Imaging technique.");
-    strcpy(CO[3].k_lvl, "K2");
 
     strcpy(CO[4].c_name, "Outline the basic principle and working of Magnetic resonance imaging technique.");
-    strcpy(CO[4].k_lvl, "K2");
+    
     po PO[11];
+    printf("....\n");
 
     for(int i =0;i<5;i++)
     {
-        sscanf(CO[i].keywords, sizeof(CO[i].keywords), CO[i].c_name);
+        sscanf(CO[i].c_name, "%s",CO[i].keywords );
+        CO[i].keywords[0]=tolower((unsigned char)CO[i].keywords[0]);
     }
-
+    for(int i = 0;i<5;i++){
+        CO[i].x = assign_k_lvl(k, CO, i);
+        // printf("CO.[%d].x: %d\n", i, CO[i].x);
+    }
+    printf("....\n");
+    
     strcpy(PO[0].rk_lvl, "K3");
     strcpy(PO[1].rk_lvl, "K4");
     strcpy(PO[2].rk_lvl, "K5");
@@ -74,54 +59,26 @@ void main(void)
     strcpy(PO[9].rk_lvl, "K2");
     strcpy(PO[10].rk_lvl, "K3");
 
-    char buffer[200];
-
-    while(fgets(buffer, sizeof(buffer), k1) != NULL){
-        buffer[strcspn(buffer, "\n")] = '\0';
-        for(int i=0;i<5;i++){
-
-        }
-        }
-    }
-    // rewind(k1);
-
-    // char buffer[100];
-
-    // while(fgets(buffer, sizeof(buffer), k1) != NULL)
-    // {
-    //     buffer[strcspn(buffer, "\n")] = '\0';   
-    //     printf("Word: %s\n", buffer);
-    // }
-    
-    for(int i =0;i<5;i++)
-    {
-        CO[i].x = CO[i].k_lvl[1] - '0';
-    }
 
     for(int i=0;i<=10;i++)
     {
         PO[i].y=PO[i].rk_lvl[1] - '0';
     }
 
-     for(int i=0;i<5;i++)
+    for(int i=0;i<5;i++)
     {
         for(int j=0;j<5;j++)
         {
-            if((PO[j].y-CO[j].x)==0)
-            {
-                //if()
-                PO[j].contribution[i]=3;
-
-            }
+            if((PO[j].y-CO[i].x)==0)
+            PO[j].contribution[i]=3; 
             else if((PO[j].y-CO[i].x)==1)
             PO[j].contribution[i]=2;
-            else if((PO[j].y-CO[j].x)==2)  
+            else if((PO[j].y-CO[i].x)==2)  
             PO[j].contribution[i]=1;
-            else if((PO[j].y-CO[j].x)>=3)
+            else if((PO[j].y-CO[i].x)>=3)
             PO[j].contribution[i]=0;
     }
     }
-
 
 
     for(int i=0;i<5;i++)
@@ -209,10 +166,8 @@ void main(void)
     }
         
     
-    fclose(k1);
-    fclose(k2);
-    fclose(k3);
-    fclose(k4);
-    fclose(k5);
-    fclose(k6);
+    for(int i=0;i<5;i++)
+    {
+        fclose(k[i]);
+    }
 }

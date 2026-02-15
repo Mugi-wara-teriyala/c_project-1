@@ -20,3 +20,19 @@ printf("The selected course outcome is:  CO%d\n", i+1);
                     printf("\n");
                 printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
 }
+
+int assign_contribution(FILE *k,co *CO,int j)
+{
+    char buffer[100];
+    for(int i =0; i<5;i++){
+
+        while(fgets(buffer, sizeof(buffer), k) != NULL){
+        buffer[strcspn(buffer, "\n")] = '\0';
+        if(strcmp(buffer,CO[j].keywords)==0){
+            return i+1;
+        }
+        rewind(k+i);
+        }
+    }
+    return 0;
+}
