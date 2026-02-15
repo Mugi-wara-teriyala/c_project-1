@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 copying
 defining
 finding
@@ -30,37 +29,4 @@ quote
 recall
 identify
 label
-=======
-copying
-defining
-finding
-locating
-quoting
-listening
-googling
-repeating
-retrieving
-outlining
-highlighting
-memorizinig
-networking
-searching
-identifying
-selecting
-tabulating
-duplicating
-matching
-bookmarking
-bullet-pointing
-list
-recite
-outline
-define
-name
-match
-quote
-recall
-identify
-label
->>>>>>> 557d44aed67b780c7dac8b70253a2eeaa4c6b3ac
 recognize
