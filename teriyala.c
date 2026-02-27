@@ -24,7 +24,6 @@ void main(void)
     co CO[5];
     strcpy(CO[0].c_name, "Discuss the principle and working of various radiographic equipments.");
     
-
     strcpy(CO[1].c_name, "Explain the tomography concept and image reconstruction techniques.");
 
     strcpy(CO[2].c_name, "Illustrate the concept of radio isotopic imaging techniques.");
@@ -43,7 +42,7 @@ void main(void)
     }
     for(int i = 0;i<5;i++){
         CO[i].x = assign_k_lvl(k, CO, i);
-        // printf("CO.[%d].x: %d\n", i, CO[i].x);
+        
     }
     printf("....\n");
     
@@ -115,11 +114,18 @@ void main(void)
 
 
     printf("Do you like to select any particular course?? (y/n): ");
-    char choice;
-    scanf("%c", &choice);
+    char choice[4];
+    scanf("%s", choice);
     getchar();  // to consume the newline character after scanf
+    do
+    {
+        printf("Please enter a valid input (y/n): ");
+        scanf("%s", choice);
+        getchar();
+    }
+    while(strcmp(choice, "y") != 0 && strcmp(choice, "Y") != 0 && strcmp(choice, "yes") != 0 && strcmp(choice, "YES") != 0 && strcmp(choice, "Yes") != 0 && strcmp(choice, "n") != 0 && strcmp(choice, "N") != 0 && strcmp(choice, "no") != 0 && strcmp(choice, "NO") != 0 && strcmp(choice, "No") != 0);
 
-    if(choice == 'y' || choice == 'Y')
+    if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
     {
         printf("enter the course outcome name: ");
         fgets(buffer, sizeof(buffer), stdin);
@@ -138,10 +144,10 @@ void main(void)
 
         do{
             printf("Would you like to select another course outcome?? (y/n): ");
-            scanf(" %c", &choice);
+            scanf(" %s", choice);
             getchar();
 
-            if(choice == 'y' || choice == 'Y')
+            if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
             {
                 printf("enter the course outcome name: ");
                 fgets(buffer, sizeof(buffer), stdin);
@@ -156,7 +162,7 @@ void main(void)
                     }
                 }
             }
-        } while(choice == 'y' || choice == 'Y');
+        } while(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0 );
         printf("Thank you!!....\n");
     }
 
