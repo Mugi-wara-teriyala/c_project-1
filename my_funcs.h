@@ -9,6 +9,7 @@ typedef struct {
     char c_name[200];
     char k_lvl[3];
     char keywords[25];
+    char Co[4];
     int x;
 } co;
 

@@ -31,9 +31,15 @@ void main(void)
     strcpy(CO[3].c_name, "Describe the basic principle involved in Ultrasound Imaging technique.");
 
     strcpy(CO[4].c_name, "Outline the basic principle and working of Magnetic resonance imaging technique.");
+
+
+    strcpy(CO[0].Co, "CO1");
+    strcpy(CO[1].Co, "CO2");
+    strcpy(CO[2].Co, "CO3");
+    strcpy(CO[3].Co, "CO4");
+    strcpy(CO[4].Co, "CO5");
     
     po PO[11];
-    printf("....\n");
 
     for(int i =0;i<5;i++)
     {
@@ -44,7 +50,6 @@ void main(void)
         CO[i].x = assign_k_lvl(k, CO, i);
         
     }
-    printf("....\n");
     
     strcpy(PO[0].rk_lvl, "K3");
     strcpy(PO[1].rk_lvl, "K4");
@@ -117,24 +122,23 @@ void main(void)
     char choice[4];
     scanf("%s", choice);
     getchar();  // to consume the newline character after scanf
-    do
+    while(strcmp(choice, "y") != 0 && strcmp(choice, "Y") != 0 && strcmp(choice, "yes") != 0 && strcmp(choice, "YES") != 0 && strcmp(choice, "Yes") != 0 && strcmp(choice, "n") != 0 && strcmp(choice, "N") != 0 && strcmp(choice, "no") != 0 && strcmp(choice, "NO") != 0 && strcmp(choice, "No") != 0)
     {
         printf("Please enter a valid input (y/n): ");
         scanf("%s", choice);
         getchar();
     }
-    while(strcmp(choice, "y") != 0 && strcmp(choice, "Y") != 0 && strcmp(choice, "yes") != 0 && strcmp(choice, "YES") != 0 && strcmp(choice, "Yes") != 0 && strcmp(choice, "n") != 0 && strcmp(choice, "N") != 0 && strcmp(choice, "no") != 0 && strcmp(choice, "NO") != 0 && strcmp(choice, "No") != 0);
 
     if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
     {
-        printf("enter the course outcome name: ");
+        printf("enter the course outcome name or the CO number (e.g., CO1): ");
         fgets(buffer, sizeof(buffer), stdin);
         buffer[strcspn(buffer, "\n")] = '\0';
 
 
         for(int i=0;i<5;i++)
         {
-            if(strcmp(buffer, CO[i].c_name) == 0)
+            if(strcmp(buffer, CO[i].c_name) == 0 || strcmp(buffer, CO[i].Co) == 0)
             {
                 print_table(i, PO);
                 break;
@@ -149,7 +153,7 @@ void main(void)
 
             if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
             {
-                printf("enter the course outcome name: ");
+                printf("enter the course outcome name or the CO number (e.g., CO1): ");
                 fgets(buffer, sizeof(buffer), stdin);
                 buffer[strcspn(buffer, "\n")] = '\0';
 
