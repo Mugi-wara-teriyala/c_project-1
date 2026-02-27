@@ -28,13 +28,11 @@ int assign_k_lvl(FILE *k[],co *CO,int j)
         while(fgets(buffer, sizeof(buffer), k[i]) != NULL){
         buffer[strcspn(buffer, "\n")] = '\0';
         if(strcmp(buffer,CO[j].keywords)==0){
-            // printf("CO.[%d].keywords: %s........\n", j, CO[j].keywords);
             rewind(k[i]);
             return i+1;
         }
         
         }rewind(k[i]);
-        printf("CO.[%d].keywords: %s\n", j, CO[j].keywords);
     }
     return 0;
 }
