@@ -23,7 +23,6 @@ calculate
 predict
 apply
 solve
-illustrate
 use
 demonstrate
 determine

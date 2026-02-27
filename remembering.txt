@@ -21,7 +21,6 @@ bookmarking
 bullet-pointing
 list
 recite
-outline
 define
 name
 match
