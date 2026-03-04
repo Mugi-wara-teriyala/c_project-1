@@ -117,16 +117,74 @@ void main(void)
     }
 
     printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
-    printf("Would you like to add details about assign contribution for other levels of PO?? (y/n): ");
+    printf("Would you like to take some suggestions to improve the course contribution?? (y/n): ");
     char choice[4];
     int a[5]={0};
     scanf("%s", choice);
     getchar();  // to consume the newline character after scanf
+    if(strcmp(choice, "y") == 0)
+    {
 
-    float b1;
+        printf("This is for PO6\nPO6 is about analyzing and evaluating societal, environmental, economic, health, safety, and legal impacts of engineering solutions.\n");
+        for(int i=0;i<5;i++)
+        {
+        if(CO[i].x == 1)
+        {
+            printf("You can explain the health and safety implications of each technique. This allows Now student connects technique with radiation risk, safety protocols.");
+            printf("You can also insist students to identify environmental and regulatory concerns related to imaging equipment disposal.This includes\n1) Waste management\n2) Legal compliance\n3) Sustainability");
+            printf("Implementing these suggestions can enhance the course's contribution from 1 ->2.\n");
+            printf("Would you like to implement these suggestions?? (y/n): ");
+            scanf("%s", choice);
+            getchar();
+            if(strcmp(choice, "y") == 0)
+            {
+                CO[i].x++;
+                printf("Great! The course's contribution to PO1 has been improved to %d.\n", CO[i].x);
+            }
+            else{
+                printf("No problem! You can consider implementing these suggestions in the future to enhance the course's contribution to PO6.\n");
+            }
+        }
 
-    printf("This is for PO6\nPO6 is about analyzing and evaluating societal, environmental, economic, health, safety, and legal impacts of engineering solutions.\n");
+        // else if(CO[i].x == 3)
+        // {
+        //     printf("Evaluate sustainability aspects of imaging system design.\n");
+        //     printf("This includes \n1) Energy consumption\n2) Equipment lifecycle\n3) Green engineering");
+        //     printf("Implementing these suggestions can enhance the course's contribution from 3 ->.\n");
+        //     printf("Would you like to implement these suggestions?? (y/n): ");
+        //     scanf("%s", choice);
+        //     getchar();
+        //     if(strcmp(choice, "y") == 0)
+        //     {
+        //         CO[i].x++;
+        //         printf("Great! The course's contribution to PO1 has been improved to %d.\n", CO[i].x);
+        //     }
+        //     else{
+        //         printf("No problem! You can consider implementing these suggestions in the future to enhance the course's contribution to PO6.\n");
+        //     }
+        // }
 
+        else if(CO[i].x == 2)
+        {
+            printf("Discuss societal and ethical considerations in MRI usage.\n");
+            printf("Implementing these suggestions can enhance the course's contribution from 2 ->3.\n");
+            printf("Would you like to implement these suggestions?? (y/n): ");
+            scanf("%s", choice);
+            getchar();
+            if(strcmp(choice, "y") == 0)
+            {
+                CO[i].x++;
+                printf("Great! The course's contribution to PO6 has been improved to %d.\n", CO[i].x);
+            }
+            else{
+                printf("No problem! You can consider implementing these suggestions in the future to enhance the course's contribution to PO6.\n");
+            }
+        }
+        else
+        {
+            printf("The course already has a strong contribution to PO6. You can consider maintaining this level by regularly updating content and incorporating current societal and ethical issues related to imaging technology.\n");
+        }
+    }
     
 
 //     printf("Does this course require students to analyze or evaluate real-life societal or environmental cases related to imaging systems?\n ");
@@ -151,532 +209,35 @@ void main(void)
 //             a[i]++;
 //         } 
 //     }
-//     printf("Are safety regulations (AERB or similar) explained?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     printf("Is sustainability of medical equipment considered?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     printf("Do students compare economic feasibility of different systems?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//     {
-//         for(int i=0;i<5;i++)
-//         {
-//             PO[5].contribution[i]=3;
-//         }
-//     }
-//     else if(b1>=0.6 && b1<0.8)
-//     {
-//         for(int i=0;i<5;i++)
-//         {
-//             PO[5].contribution[i]=2;
-//         }
-//     }
-//     else if(b1>=0.4 && b1<0.6)
-//     {
-//         for(int i=0;i<5;i++)
-//         {
-//             PO[5].contribution[i]=1;
-//         }
-//     }
-//     else
-//     {
-//         for(int i=0;i<5;i++)
-//         {
-//             PO[5].contribution[i]=0;
-//         }
-//     }
-//     }
+//     
+
+
+
+
     
 
-//     printf("This is for PO7\n");
-
-
-//     printf("Does the course require students to apply ethical principles in solving engineering problems?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     printf("Does the course address consequences of unsafe engineering decisions?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     printf("Does the course consider accessibility in engineering solutions?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-//     printf("Do students analyze what happens if standards are violated?:\n");
-//    for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-
-//     printf("Are responsibilities of engineers toward society explained?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//         {
-//             for(int i=0;i<5;i++)
-//             {
-//                 PO[6].contribution[i]=3;
-//             }
-//         }
-//         else if(b1>=0.6 && b1<0.8)
-//         {
-//             for(int i=0;i<5;i++)
-//             {
-//                 PO[6].contribution[i]=2;
-//             }
-//         }
-//         else if(b1>=0.4 && b1<0.6)
-//         {
-//             for(int i=0;i<5;i++)
-//             {
-//                 PO[6].contribution[i]=1;
-//             }
-//         }
-//         else
-//         {
-//             for(int i=0;i<5;i++)
-//             {
-//                 PO[6].contribution[i]=0;
-//             }       
-//         }
-//     }
-
-
-//     printf("This is for PO8\n");
-
-
-//     printf("Does the course require students to apply ethical principles in solving engineering problems?:\n");
-
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-    
-//     printf("Does the course address consequences of unsafe engineering decisions?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-//     printf("Does the course consider accessibility in engineering solutions?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Do students analyze what happens if standards are violated?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Are responsibilities of engineers toward society explained?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//         {
-//             PO[7].contribution[i]=3;
-//         }
-//         else if(b1>=0.6 && b1<0.8)
-//         {
-//             PO[7].contribution[i]=2;
-//         }
-//         else if(b1>=0.4 && b1<0.6)
-//         {
-//             PO[7].contribution[i]=1;
-//         }
-//         else
-//         {
-//             PO[7].contribution[i]=0;
-//         }
-//     }
-
-//     printf("This is for PO9\n");
-
-
-//     printf("Do students write structured lab reports?:\n");
-
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-    
-//     printf("Do students give technical presentations?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-//     printf("Does the course require structured technical communication beyond exam writing?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Is explanation of diagrams or systems evaluated orally?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Are seminars or viva included:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//         {
-//             PO[8].contribution[i]=3;
-//         }
-//         else if(b1>=0.6 && b1<0.8)
-//         {
-//             PO[8].contribution[i]=2;
-//         }
-//         else if(b1>=0.4 && b1<0.6)
-//         {
-//             PO[8].contribution[i]=1;
-//         }
-//         else
-//         {
-//             PO[8].contribution[i]=0;
-//         }
-//     }
-
-//     printf("This is for PO10\n");
-
-
-//     printf("This is for PO9\n");
-
-
-//     printf("Do students write structured lab reports?:\n");
-
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-    
-//     printf("Do students give technical presentations?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-//     printf("Does the course require structured technical communication beyond exam writing?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Is explanation of diagrams or systems evaluated orally?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Are seminars or viva included:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//         {
-//             PO[8].contribution[i]=3;
-//         }
-//         else if(b1>=0.6 && b1<0.8)
-//         {
-//             PO[8].contribution[i]=2;
-//         }
-//         else if(b1>=0.4 && b1<0.6)
-//         {
-//             PO[8].contribution[i]=1;
-//         }
-//         else
-//         {
-//             PO[8].contribution[i]=0;
-//         }
-//     }
-
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s",choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         } 
-//     }
-    
-//     printf("Do students give technical presentations?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-//     printf("Does the course consider accessibility in engineering solutions?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Is explanation of diagrams or systems evaluated orally?:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-    
-
-//     printf("Are seminars or viva included:\n");
-//     for(int i=0;i<5;i++)
-//     {
-//         printf("CO %d:  ", i+1);
-//         scanf("%s", choice);
-//         getchar();
-//         if(strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0 || strcmp(choice, "yes") == 0 || strcmp(choice, "YES") == 0 || strcmp(choice, "Yes") == 0)
-//         {
-//             a[i]++;
-//         }
-//     }
-//     for(int i=0;i<5;i++)
-//     {
-//         b1 = (float)a[i]/5;
-//         if(b1>=0.8)
-//         {
-//             PO[8].contribution[i]=3;
-//         }
-//         else if(b1>=0.6 && b1<0.8)
-//         {
-//             PO[8].contribution[i]=2;
-//         }
-//         else if(b1>=0.4 && b1<0.6)
-//         {
-//             PO[8].contribution[i]=1;
-//         }
-//         else
-//         {
-//             PO[8].contribution[i]=0;
-//         }
-//     }
 
 
 
 
 
-    // printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
-    // printf("| CO   | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10| PO11|\n");
-    // printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    printf("| CO   | PO1 | PO2 | PO3 | PO4 | PO5 | PO6 | PO7 | PO8 | PO9 | PO10| PO11|\n");
+    printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
 
-    // for (int i = 0; i < 5; i++) {
-    //     printf("| CO%-2d |", i + 1);
+    for (int i = 0; i < 5; i++) {
+        printf("| CO%-2d |", i + 1);
 
-    //     for (int j = 0; j < 11; j++) {
-    //         if (PO[j].contribution[i] == 0)
-    //             printf("  -  |");
-    //         else
-    //             printf("  %d  |", PO[j].contribution[i]);
-    //     }
-    //     printf("\n");
-    // }
+        for (int j = 0; j < 11; j++) {
+            if (PO[j].contribution[i] == 0)
+                printf("  -  |");
+            else
+                printf("  %d  |", PO[j].contribution[i]);
+        }
+        printf("\n");
+    }
 
-    // printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
-    // printf("Would you like to add details about assign contribution for other levels of PO?? (y/n): ");
-    
+    printf("+------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
 
     /*printf("Do you like to select any particular course?? (y/n): ");
     
